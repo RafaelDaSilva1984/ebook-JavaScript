@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="./app.js" defer></script>
+    <title>Js Aula 06 Operadores Condicionais</title>
+</head>
+<body>
+    <header class="nav">
+        <h1 class="cabecalho_titulo">Condicionais</h1>
+        <a class="nav_link" href="./aula01.html">aula 01</a>
+        <a class="nav_link" href="./aula02.html">aula 02</a>
+        <a class="nav_link" href="./aula03.html">aula 03</a>
+        <a class="nav_link" href="./aula04.html">aula 04</a>
+        <a class="nav_link" href="./aula05.html">aula 05</a>
+        <a class="nav_link" href="./aula06.html">aula 06</a>
+        <a class="nav_link" href="./aula07.html">aula 07</a>
+        <a class="nav_link" href="./aula08.html">aula 08</a>
+        <a class="nav_link" href="./aula09.html">aula 09</a>
+        <a class="nav_link" href="./aula10.html">aula 10</a>
+    </header>
+    <section class="container_principal">
+        <h1 class="subtitulo"> Aula Operadores Condicionais</h1>
+        <p class="texto">
+            <br>
+            let idade = 11
+            <br>
+            if(idade >= 18 ){
+                <br>
+                console.log(`Maior de Idade  = ${idade} anos`)
+                <br>
+            }else if(idade >= 12){
+                <br>
+                console.log(`Adolescente = ${idade} anos`)
+                <br>
+            }else{
+                <br>
+                console.log(`Criança = ${idade} anos`)
+                <br>
+                }
+                <br> <br>
+                console.log('Operador ternário')
+                <br>
+                console.log(idade >= 18? 'Maior' : 'Menor')
+                <br> <br>
+                console.log('Switch')
+                <br> <br>
+                let genero = ''
+                <br>
+                switch(genero.toUpperCase()){
+                    <br>
+                    case 'M':
+                    <br>
+                    console.log('Masculino')
+                    <br>
+                    break
+                    <br>
+                    case 'F':
+                    <br>
+                    console.log('Feminino')
+                    <br>
+                    break
+                    <br>
+                    default:
+                    <br>
+                    console.log('Outros')
+                    <br>
+                    break
+                } <br>
+                }
+        </p>
+        <img class="image" src="./condicionais.png" alt="print do DOM">
+    </section>
+    <footer class="rodape">
+        <p>
+            &copy; Desenvolvido &rarr; RafaelDaSilva1984  &reg            
+        </p>
+        <a class="link_redes" href="https://github.com/RafaelDaSilva1984">Github</a>
+    </footer> 
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="./app.js" defer></script>
+    <title>Js Aula 10 Strings</title>
+</head>
+<body>
+    <header class="nav">
+        <h1 class="cabecalho_titulo">Strings </h1>
+        <a class="nav_link" href="./aula01.html">aula 01</a>
+        <a class="nav_link" href="./aula02.html">aula 02</a>
+        <a class="nav_link" href="./aula03.html">aula 03</a>
+        <a class="nav_link" href="./aula04.html">aula 04</a>
+        <a class="nav_link" href="./aula05.html">aula 05</a>
+        <a class="nav_link" href="./aula06.html">aula 06</a>
+        <a class="nav_link" href="./aula07.html">aula 07</a>
+        <a class="nav_link" href="./aula08.html">aula 08</a>
+        <a class="nav_link" href="./aula09.html">aula 09</a>
+        <a class="nav_link" href="./aula10.html">aula 10</a>
+    </header>
+    <section class="container_principal">
+        <h1 class="subtitulo"> Aula Strings </h1>
+        <p class="texto">
+            <br>
+            const strInicial= '   minha string    '
+            <br>
+            console.log(strInicial);
+            <br>
+            //posição da letra m na string indexOf vetor
+            <br>
+            console.log(strInicial.indexOf('m'))
+            <br>
+            console.log(strInicial[0])
+            <br>
+            console.log(strInicial.charAt(0))
+            <br>
+            console.log(strInicial.toLocaleLowerCase())
+            <br>
+            //.trim() retira espaço inicio e fim da string
+            <br>
+            console.log(strInicial.toLocaleLowerCase().trim())
+            <br>
+            console.log(strInicial.toLocaleUpperCase())
+            <br>
+            //.trim() retira espaço inicio e fim da string
+            <br>
+            console.log(strInicial.toLocaleUpperCase().trim())
+            <br>
+            // verifica se possui ou não o elemento string na cadeia string e retorno boolean
+            <br>
+            console.log(strInicial.includes('m'))
+            <br>
+            // .split() incluir separadores dentro da string
+            <br>
+            console.log(strInicial.split(" "))
+            <br>
+            //- Declare uma variável frase, que receba a string "Eu desenvolvo
+            <br>
+            //aplicações"
+            <br>
+            let variavel = "Eu desenvolvo aplicações"
+            <br>
+            // Mostre no console a posição da letra d na string acima.
+            <br>
+            console.log('A letra d está na posição ' + variavel.indexOf('d'))
+            <br>
+            //Mostre no console a letra que está na posição 17 da string.
+            <br>
+            console.log('A letra que está na posição é: ' + variavel[17])
+            <br>
+            //Declare uma variável que receba o valor da variável frase toda
+            <br>
+            //maiúscula.
+            <br>
+            console.log(variavel.toLocaleUpperCase().trim())
+        </p>
+        <img class="image" src="./strings.png" alt="print do DOM">
+    </section>
+    <footer class="rodape">
+        <p>
+            &copy; Desenvolvido &rarr; RafaelDaSilva1984  &reg            
+        </p>
+        <a class="link_redes" href="https://github.com/RafaelDaSilva1984">Github</a>
+    </footer> 
+</body>
+</html>

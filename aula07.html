@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="./app.js" defer></script>
+    <title>Js Aula 07 Estruturas de Repetição FOR e WHILE </title>
+</head>
+<body>
+    <header class="nav">
+        <h1 class="cabecalho_titulo">Estruturas de Repetição FOR e WHILE </h1>
+        <a class="nav_link" href="./aula01.html">aula 01</a>
+        <a class="nav_link" href="./aula02.html">aula 02</a>
+        <a class="nav_link" href="./aula03.html">aula 03</a>
+        <a class="nav_link" href="./aula04.html">aula 04</a>
+        <a class="nav_link" href="./aula05.html">aula 05</a>
+        <a class="nav_link" href="./aula06.html">aula 06</a>
+        <a class="nav_link" href="./aula07.html">aula 07</a>
+        <a class="nav_link" href="./aula08.html">aula 08</a>
+        <a class="nav_link" href="./aula09.html">aula 09</a>
+        <a class="nav_link" href="./aula10.html">aula 10</a>
+    </header>
+    <section class="container_principal">
+        <h1 class="subtitulo"> Aula Estruturas de Repetição FOR e WHILE </h1>
+        <p class="texto">
+            <br>
+            let soma = 0
+            <br>
+            for(let i = 0; i <=5 ;i++){
+                <br>
+                console.log(i)
+                <br>
+                soma+=i
+                <br>
+            }
+            <br>
+            console.log(`Total soma do valores com FOR : ${soma}`)
+            <br><br>
+
+            let soma2 = 0
+            <br>
+            let i = 0
+            <br>
+            while(i <=4){
+                <br>
+                console.log(i)
+                <br>
+                soma2+=i
+                <br>
+                i++
+                <br>
+            }
+            <br>
+            console.log(`Total soma do valores com WHILE : ${soma2}`)
+            <br><br>
+            let conteudos = ['javascript', 'css','html','----']
+            <br>
+            for(let i = 0 ; i < conteudos.length; i++){
+                <br>
+                console.log('--- Conteudos 1: ' + conteudos[i])
+                <br>
+            }
+            <br><br>
+            let conteudos2 = ['javascript', 'css','html','react','---']
+            <br>
+            for(let i in conteudos2){
+                <br>
+                console.log('--- Conteudos 2 For in Iteração sobre chave: ' + conteudos2[i])
+                <br>
+            }
+                <br><br>
+            let conteudos3 = ['js', 'css','html','react','react native']
+            <br>
+            for(let i of conteudos3){
+                <br>
+                console.log('--- Conteudos 3 For of Iteração sobre conteudo array: ' + i)
+                <br>
+            }
+        </p>
+        <img class="image" src="./repeticoes.png" alt="print do DOM">
+    </section>
+    <footer class="rodape">
+        <p>
+            &copy; Desenvolvido &rarr; RafaelDaSilva1984  &reg            
+        </p>
+        <a class="link_redes" href="https://github.com/RafaelDaSilva1984">Github</a>
+    </footer> 
+</body>
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="./app.js" defer></script>
+    <title>Js Aula 08 Functions </title>
+</head>
+<body>
+    <header class="nav">
+        <h1 class="cabecalho_titulo">Functions </h1>
+        <a class="nav_link" href="./aula01.html">aula 01</a>
+        <a class="nav_link" href="./aula02.html">aula 02</a>
+        <a class="nav_link" href="./aula03.html">aula 03</a>
+        <a class="nav_link" href="./aula04.html">aula 04</a>
+        <a class="nav_link" href="./aula05.html">aula 05</a>
+        <a class="nav_link" href="./aula06.html">aula 06</a>
+        <a class="nav_link" href="./aula07.html">aula 07</a>
+        <a class="nav_link" href="./aula08.html">aula 08</a>
+        <a class="nav_link" href="./aula09.html">aula 09</a>
+        <a class="nav_link" href="./aula10.html">aula 10</a>
+    </header>
+    <section class="container_principal">
+        <h1 class="subtitulo"> Aula Functions </h1>
+        <p class="texto">
+            <br>
+            function calcular(){
+                <br>
+                soma = 1+2
+                <br>
+                return soma
+                <br>
+            }
+            <br> <br>
+            console.log(calcular)
+            <br>
+            console.log(calcular())
+            <br>
+            function calcularParametros(valor1,valor2){
+                <br>
+                var soma =  valor1 + valor2
+                <br>
+                return soma
+                <br> 
+            }
+            <br> <br>
+            var soma = calcularParametros(2,2)
+            <br>
+            var soma2 = calcularParametros(10,10)
+            <br>
+            console.log(soma, soma2)
+            <br>
+            console.log('Exercícios Functions')
+            <br>
+            function calcularValores(valor1, valor2, valor3, valor4){
+                <br>
+                var somar = valor1+valor2+valor3+valor4
+                <br>
+                return somar
+                <br>
+            }
+            <br><br>
+            var executaSomar = calcularValores(5,6,7,8)
+            <br>
+            console.log(executaSomar)
+            <br>
+            var adicionaValor = 10
+            <br>
+            console.log(executaSomar + adicionaValor)
+            <br> <br>
+            function life(){
+                <br>
+                console.log('Aprendendo JavaScript')
+                <br>
+            }
+            <br>
+            life()
+            <br><br>
+            function tresValores(valor1, valor2, valor3){
+                <br>
+                var somarValores = valor1+valor2+valor3
+                <br>
+                if(valor1 == '' || valor2 =='' || valor3 == ''){
+                    <br>
+                    return 'Os valores não foram preenchidos corretamente!'
+                    <br>
+                }
+                <br>
+                return somarValores
+                <br> <br>
+            }
+            <br>
+            var entradaValores = tresValores(5,2,3)
+            <br>
+            console.log(entradaValores)
+            <br>
+            function multiplicador(){
+                <br>
+                if(isNaN(entradaValores)){
+                    <br>
+                    console.log('Error entrada de valores.')
+                    <br>
+                }else{
+                    <br>
+                    var multiplicarValores = entradaValores * 4
+                    <br>
+                    console.log(multiplicarValores)
+                    <br>
+                }
+            }
+            <br>
+            multiplicador()
+            <br><br>
+            
+            function opcoesCalculos(valor1,valor2,valor3,valor4){
+                <br>
+            if (valor1 > 0 && valor2 > 0 && valor3 > 0 && valor4 > 0){
+                <br>
+                return parseInt((valor1 + valor2 ) / (valor3 + valor4)).toFixed(2) +' => 4 valores'
+                <br>
+            }else if (valor1 > 0 && valor2 > 0 && valor3 > 0){
+                <br>
+                return ((valor1 + valor2) * valor3) +' => 3 valores'
+                <br>
+            }else if (valor1 > 0 && valor2 > 0){
+                <br>
+                return (valor1 * valor2 ) +' => 2 valores'
+                <br>
+            }else if(valor1 > 0){
+                <br>
+                return valor1 +' => 1 valor'
+                <br>
+            }else{
+                <br>
+                return false +' => 0 valores'
+                <br>
+            }
+            }
+            <br>
+            var valoresOpcoes = opcoesCalculos(22,4,6,8)
+            <br>
+            console.log(valoresOpcoes)
+            <br>
+            console.log(typeof(valoresOpcoes))
+            <br>
+
+        </p>
+        <img class="image" src="./functions.png" alt="print do DOM">
+    </section>
+    <footer class="rodape">
+        <p>
+            &copy; Desenvolvido &rarr; RafaelDaSilva1984  &reg            
+        </p>
+        <a class="link_redes" href="https://github.com/RafaelDaSilva1984">Github</a>
+    </footer> 
+</body>
+</html>
