@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="./app.js" defer></script>
+    <title>Js Aula 12 Arrow Functions</title>
+</head>
+<body>
+    <header class="nav">
+        <h1 class="cabecalho_titulo">Conhecendo JavaScript</h1>
+        <a class="nav_link" href="./aula01.html">Console Log</a>
+        <a class="nav_link" href="./aula02.html">Variáveis</a>
+        <a class="nav_link" href="./aula03.html">Aritméticos</a>
+        <a class="nav_link" href="./aula04.html">Relacionais</a>
+        <a class="nav_link" href="./aula05.html">Lógicos</a>
+        <a class="nav_link" href="./aula06.html">Condicionais</a>
+        <a class="nav_link" href="./aula07.html">For e While</a>
+        <a class="nav_link" href="./aula08.html">Functions</a>
+        <a class="nav_link" href="./aula09.html">Objetos</a>
+        <a class="nav_link" href="./aula10.html">Strings</a>
+        <a class="nav_link" href="./aula11.html">Arrays</a>
+        <a class="nav_link" href="./aula12.html">Arrow Functions</a>
+        <a class="nav_link" href="./aula13.html">Classes</a>
+    </header>
+    <section class="container_principal">
+        <h1 class="subtitulo"> Arrow Functions </h1>
+        <p class="texto">
+            <br>
+            // Functions Padrão
+            <br>
+            const arr = [1,true,'str',{},function(){},[]]
+            <br>
+            const arr2 = arr.map(function(item){
+                <br>
+                return typeof item === 'function' ? 'era uma funcao' : item
+                <br>
+            })
+            <br>
+            console.log(arr2)
+            <br> <br>
+            // arrow functions
+            <br>
+            const arr1 = [1,true,'str',{},function(){},[]]
+            <br>
+            const arr3 = arr1.map(item =>typeof item === 'function' ? 'era uma funcao' : item
+            <br>
+            )
+            <br>
+            console.log(arr3)
+            <br> <br>
+            // exemplos arrow functions
+            <br>
+            const arr10 = [1,true,'str',{},function(){},[]]
+            <br>
+            const iterador = item =>typeof item === 'function' ? 'era uma funcao' : item
+            <br>
+            const arr11 = arr10.map(iterador)
+            <br>
+            console.log(arr11)
+            <br> <br>
+            const soma =(n1, n2, n3=15) => n1 + n2 + n3 // parâmetros default
+            <br>
+            console.log(soma(5,10))
+            <br> <br>
+            //spreed operators
+            <br>
+            const somar =(...nums)=>console.log(nums)
+            <br>
+            console.log(somar(10,11,12,13,14,15))
+        </p>
+        <img class="image" src="./arrowFn.png" alt="print do DOM">
+        <p class="texto">
+            <br>
+            1- Declare a variável somaFun.
+            <br>
+            2- Atribua a variável somaFun uma arow function que receba 3
+            <br>
+            parâmetros e retorne a soma dos dois primeiros multiplicado
+            <br>
+            pelo terceiro.
+            <br>
+            let somafun =(n1,n2,n3) => (n1+n2+n3) * n3
+            <br>
+            const resultado = somafun(2,3,5)
+            <br>
+            console.log(`O resultado é: ${resultado}`)
+            <br> <br>
+            3- Declare uma variável e atribua uma arrow function que receba
+            <br>
+            um valor indeterminado de parâmetros e retorne a soma de todos eles utilizando o método reduce.
+            <br>
+            let valorInd =((...nums) => somador = nums.reduce((a,b,i)=> a + b,0))
+            <br>
+            4- Declare as variáveis e atribua os respectivos valores: a = 10,
+            <br>
+            b = 25, c= 40 e d = 55.
+            <br>
+            let valor = valorInd(10,25,40,55)
+            <br>
+            5- Mostre no console a frase "A soma das variáveis é (valor)",
+            <br>
+            utilizando a arrow function acima.
+            <br>
+            console.log(`A soma das variáveis é = ${valor},utilizando a arrow function acima`)
+        </p>
+        <img class="image" src="./arrowFn2.png" alt="print do DOM">
+    </section>
+    <footer class="rodape">
+        <p>
+            &copy; Desenvolvido &rarr; RafaelDaSilva1984  &reg            
+        </p>
+        <a class="link_redes" href="https://github.com/RafaelDaSilva1984">Github</a>
+    </footer> 
+</body>
+</html>

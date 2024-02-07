@@ -409,42 +409,249 @@
 // console.log(arr.slice(1,3)) //somente exclui qtd de valores 
 // console.log(arr.slice(-0)) // remove na ordem decrescente
 
-// Etapas:
-// 1- Declare uma variável que receba um array com 10 números.
-const arr10 = [10,9,8,7,6,3,2,1,5,4,11]
-// 2- Declare uma função que receba um array como argumento,
-// remova os dois primeiros valores do array e retorne a soma de todo o restante utilizando o método reduce.
-// 3- Mostre no console a mensagem "O valor final é (valor)!" ao
-// invocar a função acima.
-console.log('Original arr10 ', arr10)
-function arrayArgumento(array){
-    const restante= array.slice(2)    
-    console.log(' Array método splice', arr10)
-    const soma = restante.reduce((acumulador, valorAtual) => acumulador + valorAtual, 0);
-    return soma;
+// // Etapas:
+// // 1- Declare uma variável que receba um array com 10 números.
+// const arr10 = [10,9,8,7,6,3,2,1,5,4,11]
+// // 2- Declare uma função que receba um array como argumento,
+// // remova os dois primeiros valores do array e retorne a soma de todo o restante utilizando o método reduce.
+// // 3- Mostre no console a mensagem "O valor final é (valor)!" ao
+// // invocar a função acima.
+// console.log('Original arr10 ', arr10)
+// function arrayArgumento(array){
+//     const restante= array.slice(2)    
+//     console.log(' Array método splice', arr10)
+//     const soma = restante.reduce((acumulador, valorAtual) => acumulador + valorAtual, 0);
+//     return soma;
+//     }
+//     const resultado = arrayArgumento(arr10)
+//     console.log('O valor final é: ', resultado)
+// // 4- Declare uma função que receba um array como argumento,
+// // remova o 4º valor do array e adicione 10, 20 e 28.
+// console.log('Novos Exercícios')
+// const arr5 = [5,9,1,7]
+// console.log(`Original = ${arr5}`)
+// function arrayRestante(array1, somador){
+//     const retirado = array1.splice(3,1)
+//     console.log(`Retirado 4º valor = ${retirado}`)
+//     array1.push(10,20,28)
+//     somador = array1.reduce((a,b)=> a+b,0)
+//     return [array1, somador]
+// }
+// const revelarResultado =arrayRestante(arr5)  
+// const qtdvalores = (revelarResultado[0].length) 
+// // 5- Mostre no console a frase: " O array tem (quantidade de itens)
+// // itens e são eles: (array)" .
+// console.log(`O array tem ${qtdvalores} itens e são eles:, ${revelarResultado[0]}, total de: ${revelarResultado[1]}`)
+// // 6- Crie a variável testSlice e atribua os dois últimos números do
+// // array utilizando o método slice.
+// console.log(`Original = ${arr5}`)
+// const testSlice = arr5.slice(4)
+// const somarSlice = testSlice.reduce((a,b)=>a+b,0)
+// console.log(`Slice ${testSlice} e sua soma = ${somarSlice} `)
+
+// // Functions Padrão
+// const arr = [1,true,'str',{},function(){},[]]
+// const arr2 = arr.map(function(item){
+//     return typeof item === 'function' ? 'era uma funcao' : item
+// })
+// console.log(arr2)
+// // arrow functions
+// const arr1 = [1,true,'str',{},function(){},[]]
+// const arr3 = arr1.map(item =>typeof item === 'function' ? 'era uma funcao' : item
+// )
+// console.log(arr3)
+// // exempçlos arrow functions
+// const arr10 = [1,true,'str',{},function(){},[]]
+// const iterador = item =>typeof item === 'function' ? 'era uma funcao' : item
+// const arr11 = arr10.map(iterador)
+// console.log(arr11)
+
+// const soma =(n1, n2, n3=15) => n1 + n2 + n3 // parâmetros default
+// console.log(soma(5,10))
+
+// //spreed operators
+// const somar =(...nums)=>console.log(nums)
+// console.log(somar(10,11,12,13,14,15))
+
+// // 1- Declare a variável somaFun.
+// // 2- Atribua a variável somaFun uma arow function que receba 3
+// // parâmetros e retorne a soma dos dois primeiros multiplicado
+// // pelo terceiro.
+// let somafun =(n1,n2,n3) => (n1+n2+n3) * n3
+// const resultado = somafun(2,3,5)
+// console.log(`O resultado é: ${resultado}`)
+// // 3- Declare uma variável e atribua uma arrow function que receba
+// // um valor indeterminado de parâmetros e retorne a soma de todos eles utilizando o método reduce.
+// let valorInd =((...nums) => somador = nums.reduce((a,b,i)=> a + b,0))
+// // 4- Declare as variáveis e atribua os respectivos valores: a = 10,
+// // b = 25, c= 40 e d = 55.
+// let valor = valorInd(10,25,40,55)
+// // 5- Mostre no console a frase "A soma das variáveis é (valor)",
+// // utilizando a arrow function acima.
+// console.log(`A soma das variáveis é = ${valor},utilizando a arrow function acima`)
+
+//Classes
+
+// class Calc {
+//     constructor(){
+//         this.history = []
+//         console.log(this)
+//     }
+//     soma(n1,n2){
+//         const result = n1+n2
+//         this.history.push(result)
+//         return result
+//     }
+//     sub(n1,n2){
+//         const result = n1-n2
+//         this.history.push(result)
+//         return result
+//     }
+//     mult(n1,n2){
+//         const result = n1*n2
+//         this.history.push(result)
+//         return result
+//     }
+//     div(n1,n2){
+//         const result = n1/n2
+//         this.history.push(result)
+//         return result
+//     }
+// }
+// const calc = new Calc()
+// console.log(calc.soma(5,5),'soma')
+// console.log(calc.soma(3,5))
+// console.log(calc.soma(2,5))
+// console.log(calc.sub(5,5),'subtracao')
+// console.log(calc.sub(3,5))
+// console.log(calc.sub(2,5))
+// console.log(calc.mult(5,5),'multiplicacao')
+// console.log(calc.mult(3,5))
+// console.log(calc.mult(2,5),'divisao')
+// console.log(calc.div(3,5))
+// console.log(calc.div(2,5))
+// console.log(calc.div(3,5))
+
+// class CalcCientifica extends Calc{ //usando herança da classe Calc
+//     constructor(){
+//         super() // método de classe
+//     }
+//     sub(n1,n2){
+//         const result = n1-n2
+//         this.history.push(result)
+//         return result
+//     }
+//     mult(n1,n2){
+//         const result = n1*n2
+//         this.history.push(result)
+//         return result
+//     }
+//     div(n1,n2){
+//         const result = n1/n2
+//         this.history.push(result)
+//         return result
+//     }
+// }
+// const calcC = new CalcCientifica()
+// console.log(calcC.soma(5,5),'soma')
+// console.log(calcC.soma(3,5))
+// console.log(calcC.soma(2,5))
+// console.log(calcC.sub(5,5),'subtracao')
+// console.log(calcC.sub(3,5))
+// console.log(calcC.sub(2,5))
+// console.log(calcC.mult(5,5),'multiplicacao')
+// console.log(calcC.mult(3,5))
+// console.log(calcC.mult(2,5),'divisao')
+// console.log(calcC.div(3,5))
+// console.log(calcC.div(2,5))
+// console.log(calcC.div(3,5))
+
+// Exercícios
+// 1- Instancie uma classe com nome calcFun.
+// 2- Atribua uma propriedade sendo ela um array vazio.
+// 3- Atribua a propriedade soma, que recebe dois valores e retorne a
+// soma.
+// 4- Atribua a propriedade sub, que recebe dois valores e
+// retorne a subtração.
+// 5- Atribua a propriedade mult, que recebe dois valores e retorne a
+// multiplicação.
+// 6- Atribua a propriedade div, que recebe dois valores e retorne
+// a divisão.
+// 7- O resultado de cada operação executada deve ser registrada no
+// array criado.
+// 8- Declare uma variável calc e instancie a classe calcFun.
+// 9- Mostre no console o resultado de todas as operações da
+// classe instanciada.
+class calcFun{
+    constructor(){
+        this.history = [] //armazena valor no array history
+        console.log(this)
     }
-    const resultado = arrayArgumento(arr10)
-    console.log('O valor final é: ', resultado)
-// 4- Declare uma função que receba um array como argumento,
-// remova o 4º valor do array e adicione 10, 20 e 28.
-console.log('Novos Exercícios')
-const arr5 = [5,9,1,7]
-console.log(`Original = ${arr5}`)
-function arrayRestante(array1, somador){
-    const retirado = array1.splice(3,1)
-    console.log(`Retirado 4º valor = ${retirado}`)
-    array1.push(10,20,28)
-    somador = array1.reduce((a,b)=> a+b,0)
-    return [array1, somador]
+        soma(vl1,vl2){
+        const result= (vl1+vl2)
+        this.history.push(result)
+        return result
+    }
+    sub(vl1,vl2){
+        const result= (vl1-vl2)
+        this.history.push(result)
+        return result
+    }
+    mult(vl1,vl2){
+        const result= (vl1*vl2)
+        this.history.push(result)
+        return result
+    }
+    div(vl1,vl2){
+        const result= (vl1/vl2)
+        this.history.push(result)
+        return result
+    }
 }
-const revelarResultado =arrayRestante(arr5)  
-const qtdvalores = (revelarResultado[0].length) 
-// 5- Mostre no console a frase: " O array tem (quantidade de itens)
-// itens e são eles: (array)" .
-console.log(`O array tem ${qtdvalores} itens e são eles:, ${revelarResultado[0]}, total de: ${revelarResultado[1]}`)
-// 6- Crie a variável testSlice e atribua os dois últimos números do
-// array utilizando o método slice.
-console.log(`Original = ${arr5}`)
-const testSlice = arr5.slice(4)
-const somarSlice = testSlice.reduce((a,b)=>a+b,0)
-console.log(`Slice ${testSlice} e sua soma = ${somarSlice} `)
+    const calc = new calcFun() // precisa da palavra reservada new
+    console.log(calc.soma(2,3),'soma')
+    console.log(calc.sub(2,3),'sub')
+    console.log(calc.mult(2,3),'mult')
+    console.log(calc.div(2,3),'div')
+// 10- Instancie uma classe com nome calcSmart que receba por
+// herança as propriedades da classe calcFun.
+// 11- Declare uma variável calcS e instancie a classe calcSmart
+// 12- Mostre no console o resultado de todas as operações da classe
+// instanciada.
+
+class CalcSmart extends calcFun{
+    constructor(){
+        super()
+    }
+    soma(vl1,vl2){
+    const result = (vl1+vl2)
+    this.history.push(result) 
+    return result
+    }
+        soma(vl1,vl2){
+        const result = (vl1+vl2)
+        this.history.push(result) //armazena valor no array history
+        return result
+        }
+        sub(vl1,vl2){
+        const result = (vl1-vl2)
+        this.history.push(result)
+        return result
+        }
+        mult(vl1,vl2){
+        const result = (vl1*vl2)
+        this.history.push(result)
+        return result
+        }
+        div(vl1,vl2){
+        const result = (vl1/vl2)
+        this.history.push(result) 
+        return result
+        }
+    }
+
+const calcS = new CalcSmart() // precisa da palavra reservada new
+console.log(calcS.soma(2,3),'soma')
+console.log(calcS.sub(2,3),'sub')
+console.log(calcS.mult(2,3),'mult')
+console.log(calcS.div(2,3),'div')

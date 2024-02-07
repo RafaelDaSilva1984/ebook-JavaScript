@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="./app.js" defer></script>
+    <title>Js Aula 13 Classes</title>
+</head>
+<body>
+    <header class="nav">
+        <h1 class="cabecalho_titulo">Conhecendo JavaScript</h1>
+        <a class="nav_link" href="./aula01.html">Console Log</a>
+        <a class="nav_link" href="./aula02.html">Variáveis</a>
+        <a class="nav_link" href="./aula03.html">Aritméticos</a>
+        <a class="nav_link" href="./aula04.html">Relacionais</a>
+        <a class="nav_link" href="./aula05.html">Lógicos</a>
+        <a class="nav_link" href="./aula06.html">Condicionais</a>
+        <a class="nav_link" href="./aula07.html">For e While</a>
+        <a class="nav_link" href="./aula08.html">Functions</a>
+        <a class="nav_link" href="./aula09.html">Objetos</a>
+        <a class="nav_link" href="./aula10.html">Strings</a>
+        <a class="nav_link" href="./aula11.html">Arrays</a>
+        <a class="nav_link" href="./aula12.html">Arrow Functions</a>
+        <a class="nav_link" href="./aula13.html">Classes</a>
+    </header>
+    <section class="container_principal">
+        <h1 class="subtitulo"> Classes </h1>
+        <p class="texto">
+            <br>
+            Exercícios
+            <br>
+            1- Instancie uma classe com nome calcFun.
+            <br>
+            2- Atribua uma propriedade sendo ela um array vazio.
+            <br>
+            3- Atribua a propriedade soma, que recebe dois valores e retorne a soma.
+            <br>
+            4- Atribua a propriedade sub, que recebe dois valores e  retorne a subtração.
+            <br>
+            5- Atribua a propriedade mult, que recebe dois valores e retorne a multiplicação.
+            <br>
+            6- Atribua a propriedade div, que recebe dois valores e retorne a divisão.
+            <br>
+            7- O resultado de cada operação executada deve ser registrada no array criado.
+            <br>
+            8- Declare uma variável calc e instancie a classe calcFun.
+            <br>
+            9- Mostre no console o resultado de todas as operações da classe instanciada.
+            <br> <br>
+            class calcFun{
+                <br>
+                constructor(){
+                    <br>
+                    this.history = [] //armazena valor no array history
+                    <br>
+                    console.log(this)
+                    <br>
+                }
+                <br>
+                    soma(vl1,vl2){
+                        <br>
+                    const result= (vl1+vl2)
+                    <br>
+                    this.history.push(result)
+                    <br>
+                    return result
+                    <br>
+                }
+                <br>
+                sub(vl1,vl2){
+                    <br>
+                    const result= (vl1-vl2)
+                    <br>
+                    this.history.push(result)
+                    <br>
+                    return result
+                    <br>
+                }
+                <br>
+                mult(vl1,vl2){
+                    <br>
+                    const result= (vl1*vl2)
+                    <br>
+                    this.history.push(result)
+                    <br>
+                    return result
+                    <br>
+                }
+                <br>
+                div(vl1,vl2){
+                    <br>
+                    const result= (vl1/vl2)
+                    <br>
+                    this.history.push(result)
+                    <br>
+                    return result
+                    <br>
+                }
+                <br>
+            }
+            <br><br>
+            const calc = new calcFun() // precisa da palavra reservada new
+            <br>
+            console.log(calc.soma(2,3),'soma')
+            <br>
+            console.log(calc.sub(2,3),'sub')
+            <br>
+            console.log(calc.mult(2,3),'mult')
+            <br>
+            console.log(calc.div(2,3),'div')
+            <br> <br>
+            10- Instancie uma classe com nome calcSmart que receba por
+            <br>
+            herança as propriedades da classe calcFun.
+            <br>
+            11- Declare uma variável calcS e instancie a classe calcSmart
+            <br>
+            12- Mostre no console o resultado de todas as operações da classe instanciada.
+            <br><br>
+            class CalcSmart extends calcFun{ // herança da classe calcFun
+                <br>
+                constructor(){
+                    <br>
+                    super()
+                    <br>
+                }
+                <br>
+                soma(vl1,vl2){
+                    <br>
+                const result = (vl1+vl2)
+                <br>
+                this.history.push(result) 
+                <br>
+                return result
+                <br>
+                }
+                <br>
+                    soma(vl1,vl2){
+                        <br>
+                    const result = (vl1+vl2)
+                    <br>
+                    this.history.push(result) //armazena valor no array history
+                    <br>
+                    return result
+                    <br>
+                    }
+                    <br>
+                    sub(vl1,vl2){
+                        <br>
+                    const result = (vl1-vl2)
+                    <br>
+                    this.history.push(result)
+                    <br>
+                    return result
+                    <br>
+                    }
+                    <br>
+                    mult(vl1,vl2){
+                        <br>
+                    const result = (vl1*vl2)
+                    <br>
+                    this.history.push(result)
+                    <br>
+                    return result
+                    <br>
+                    }
+                    <br>
+                    div(vl1,vl2){
+                        <br>
+                    const result = (vl1/vl2)
+                    <br>
+                    this.history.push(result) 
+                    <br>
+                    return result
+                    <br>
+                    }
+                    <br>
+                }
+                <br>
+            const calcS = new CalcSmart() // precisa da palavra reservada new
+            <br>
+            console.log(calcS.soma(2,3),'soma')
+            <br>
+            console.log(calcS.sub(2,3),'sub')
+            <br>
+            console.log(calcS.mult(2,3),'mult')
+            <br>
+            console.log(calcS.div(2,3),'div')
+            <br>
+        </p>
+        <img class="image" src="./classes.png" alt="print do DOM">
+        <p class="texto">
+            <br> <br>
+            10- Instancie uma classe com nome calcSmart que receba por
+            <br>
+            herança as propriedades da classe calcFun.
+            <br>
+            11- Declare uma variável calcS e instancie a classe calcSmart
+            <br>
+            12- Mostre no console o resultado de todas as operações da classe instanciada.
+            <br><br>
+            class CalcSmart extends calcFun{ // herança da classe calcFun
+                <br>
+                constructor(){
+                    <br>
+                    super()
+                    <br>
+                }
+                <br>
+                soma(vl1,vl2){
+                    <br>
+                const result = (vl1+vl2)
+                <br>
+                this.history.push(result) 
+                <br>
+                return result
+                <br>
+                }
+                <br>
+                    soma(vl1,vl2){
+                        <br>
+                    const result = (vl1+vl2)
+                    <br>
+                    this.history.push(result) //armazena valor no array history
+                    <br>
+                    return result
+                    <br>
+                    }
+                    <br>
+                    sub(vl1,vl2){
+                        <br>
+                    const result = (vl1-vl2)
+                    <br>
+                    this.history.push(result)
+                    <br>
+                    return result
+                    <br>
+                    }
+                    <br>
+                    mult(vl1,vl2){
+                        <br>
+                    const result = (vl1*vl2)
+                    <br>
+                    this.history.push(result)
+                    <br>
+                    return result
+                    <br>
+                    }
+                    <br>
+                    div(vl1,vl2){
+                        <br>
+                    const result = (vl1/vl2)
+                    <br>
+                    this.history.push(result) 
+                    <br>
+                    return result
+                    <br>
+                    }
+                    <br>
+                }
+                <br>
+            const calcS = new CalcSmart() // precisa da palavra reservada new
+            <br>
+            console.log(calcS.soma(2,3),'soma')
+            <br>
+            console.log(calcS.sub(2,3),'sub')
+            <br>
+            console.log(calcS.mult(2,3),'mult')
+            <br>
+            console.log(calcS.div(2,3),'div')
+            <br>
+        </p>
+        <img class="image" src="./classes2.png" alt="print do DOM">
+    </section>
+    <footer class="rodape">
+        <p>
+            &copy; Desenvolvido &rarr; RafaelDaSilva1984  &reg            
+        </p>
+        <a class="link_redes" href="https://github.com/RafaelDaSilva1984">Github</a>
+    </footer> 
+</body>
+</html>
