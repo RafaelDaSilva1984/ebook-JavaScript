@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="./app.js" defer></script>
+    <title>Js Aula 11 Arrays</title>
+</head>
+<body>
+    <header class="nav">
+        <h1 class="cabecalho_titulo">Conhecendo JavaScript</h1>
+        <a class="nav_link" href="./aula01.html">Console Log</a>
+        <a class="nav_link" href="./aula02.html">Variáveis</a>
+        <a class="nav_link" href="./aula03.html">Aritméticos</a>
+        <a class="nav_link" href="./aula04.html">Relacionais</a>
+        <a class="nav_link" href="./aula05.html">Lógicos</a>
+        <a class="nav_link" href="./aula06.html">Condicionais</a>
+        <a class="nav_link" href="./aula07.html">For e While</a>
+        <a class="nav_link" href="./aula08.html">Functions</a>
+        <a class="nav_link" href="./aula09.html">Objetos</a>
+        <a class="nav_link" href="./aula10.html">Strings</a>
+        <a class="nav_link" href="./aula11.html">Arrays</a>
+    </header>
+    <section class="container_principal">
+        <h1 class="subtitulo"> Aula arrays </h1>
+        <p class="texto">
+            <br>
+            Arrays e Vetores
+            <br>
+            const arr1 = Array(1,true,'str',{}, function(){})
+            <br>
+            console.log(arr1)
+            <br><br>
+            const arr = [1,true,'str',{}, function(){}]
+            <br>
+            console.log(arr)
+            <br><br>
+            //forEach = iterar sobre cada item do array nome: arr - deve iniciar com uma function
+            <br>
+            arr.forEach(function(item){
+                <br>
+                console.log('Item: ', item)
+                <br>
+            })
+                <br><br>
+            // retorna um novo array sem alterar original, substituido os item pelo retorno
+            <br>
+            console.log(arr.map(function(item){    
+                <br>
+                return typeof item === 'function' ? 'era uma função': item 
+                <br>
+            }))
+                <br><br>
+            // filter retirar itens do array exemplo a function
+            <br>
+            const array3 = arr.filter(function(item){
+                <br>
+                return typeof item !== 'function' 
+                <br>
+            })
+            <br>
+            console.log(array3)
+            <br><br>
+
+            // push inserir elementos no array e altera o array original
+            <br>
+            arr.push('nova str')
+            <br>
+            console.log(arr, ' uso push antes do pop')
+            <br>
+            // pop remove o último item do array
+            <br>
+            console.log(arr.pop())
+            <br>
+            console.log(arr, ' depois do pop retirou a nova str')
+            <br>
+            // shift remove o primeiro item do array
+            <br>
+            console.log(arr.shift())
+            <br>
+            console.log(arr, ' depois do shift retirou 1')
+            <br> <br>
+
+            // destruct de um array
+            <br>
+            console.log(arr)
+            <br>
+            //const [isbool, str, obj, fn] = arr
+            <br>
+            // console.log(isbool)
+            <br>
+            // console.log(str)
+            <br>
+            // console.log(obj)
+            <br>
+            // console.log(fn)
+            <br>
+            const[isbool, ...restoarray] = arr
+            <br>
+            console.log(restoarray)
+            <br>
+            const narr = [isbool, ...restoarray]
+            <br>
+            console.log(narr)
+        </p>
+        <img class="image" src="./arrays.png" alt="print do DOM">
+        <p class="texto">
+            <br>
+            // Array reduce - não altera valor original, deve iniciar com uma function, e ter o ponto de inicio em 0 zero padrão
+            <br>
+            // memo = primeiro valor nesse caso = 0 'inicial, o current, é o valor da posição de index 0 exemplo: 1
+            <br>
+            const arr = [1,4,5,5,7,9]
+            <br>
+            const result = arr.reduce(function(memo, current, index){
+                <br>
+                console.log('index:', index)
+                <br>
+                return memo + current
+                <br>
+            },0)
+            <br>
+            console.log('O resultado da soma de valores de array é: ', result)
+        </p>
+        <img class="image" src="./arrayReduce.png" alt="print do DOM">
+        <p class="texto">
+            <br>
+            // Ordenação de arrays
+            <br>
+                const arr = [3,2,1, 'z', 'x']
+                <br>
+                const sorted = arr.sort()
+                <br>
+                console.log(arr)
+                <br>
+                const arr1 =[2,1,4]
+                <br>
+                const sorted1 = arr1.sort(function(direita, esquerda){
+                    <br>
+                    // return 0,1,-1
+                    <br>
+                    if(direita === esquerda){
+                        <br>
+                        return 0 // fica na mesma ordem
+                        <br>
+                        // retorna 1 para ordem crescente
+                        <br>
+                    } return direita > esquerda ? 1 : -1
+                    <br>
+                        // retorna -1 para ordem decrescente
+                        <br>
+                        //return direita > esquerda ? -1 : 11
+                        <br>
+                        })
+                        <br>
+                        console.log(sorted1)
+        </p>
+        <img class="image" src="./arrays2.png" alt="print do DOM">
+        <p class="texto">
+            <br>
+            //Exercícios 
+            <br><br>
+            // 1- Declare uma variável que receba um array (Vetor) com os
+            <br>
+            // seguintes valores: String, Função, objeto, número, booleano e
+            <br>
+            // array.
+            <br>
+            const arr = ['str',function(){},{},2,true,[]]
+            <br>
+            // 2- Mostre no console a quantidade de itens no array.
+            <br>
+            console.log(arr.length,'elementos populam o array')
+            <br>
+            // 3- Altere o valor do número para 31.
+            <br>
+            arr[3]=31
+            <br>
+            console.log(arr)
+            <br>
+            // 4- Remova o objeto do array.
+            <br>
+            const removeObj = arr.filter(function(item){
+                <br>    
+                return typeof item === 'object' ? false: item
+                <br>
+            })
+            <br>
+            console.log(removeObj)
+            <br>
+            // 5- Adicione uma string com seu nome.
+            <br>
+            arr.push('Rafael da Silva')
+            <br>
+            console.log(arr)
+            <br>
+            // 6- Remova o primeiro item do array.
+            <br>
+            arr.shift()
+            <br>
+            console.log(arr)
+            <br>
+            // 7- Remova o último item do array.
+            <br>
+            arr.pop()
+            <br>
+            console.log(arr)
+            <br> <br>
+            // 1- Declare uma variável que receba um array com 7 números.
+            <br>
+            const arr7 = [1,2,3,4,5,6,7]
+            <br>
+            console.log(arr7)
+            <br>
+            // 2- Declare uma função que receba um array como argumento e
+            <br>
+            // retorne a soma de todos os valores do array utilizando o
+            <br>
+            // método reduce.
+            <br>
+            const resultadoSoma = arr7.reduce(function(memo,current,index){
+                <br>
+                return memo + current
+                <br>
+            },0)
+            <br>
+            // 3- A função acima deverá exibir no console a frase: "A soma de odos os valores do array é igual a (valor)!"
+            <br>
+            console.log('"A soma de todos os valores do array é igual a ',resultadoSoma)
+            <br>
+            // 1- Declare uma variável que receba um array com 5 números.
+            <br>
+            const array5 = [5,7,12,9,1]
+            <br>
+            // 2- Declare uma função que receba um array como argumento e
+            <br>
+            // retorne o mesmo ordenado de forma crescente.
+            <br>
+            const arr5Crescente = array5.sort(function(dir, esq){
+                <br>
+                if(dir === esq){
+                    <br>
+                    return 0
+                    <br>
+                } return dir > esq ? 1 : -1
+                <br>
+            })
+            <br>
+            // 3- Declare uma função que receba um array como argumento e
+            <br>
+            // retorne o mesmo ordenado de forma decrescente.
+            <br>
+            const arr5Decrescente = array5.sort(function(dir, esq){
+                <br>
+                if(dir === esq){
+                    <br>
+                    return 0
+                    <br>
+                } return dir > esq ? -1 : 1
+                <br>
+            })
+                <br>
+            // 4- Mostre no console o resultado das duas funções acima.
+            <br>
+            console.log('Inicial ',array5)
+            <br>
+            console.log('Crescente ',arr5Crescente, 'Decrescente ', arr5Decrescente)
+            <br>
+        </p>
+        <img class="image" src="./arraysExerc.png" alt="print do DOM">
+        <p class="texto">
+            <br>
+            // Array splice e slice
+            <br>
+            const arr = ['a','b','c','d','e','f']
+            <br>
+            console.log(arr);
+            <br>
+            console.log(arr.splice(1,2,'x','y')) // remove 1 valor noindice 3, apartir do segundo parametro é adição
+            <br>
+            console.log(arr);
+            <br>
+            console.log(arr.slice(1,3)) //somente exclui qtd de valores 
+            <br>
+            console.log(arr.slice(-0)) // remove na ordem decrescente
+            <br>
+        </p>
+        <img class="image" src="./array3.png" alt="print do DOM">
+        <p class="texto">
+            <br>
+            // Etapas:
+            <br>
+            // 1- Declare uma variável que receba um array com 10 números.
+            <br>
+            const arr10 = [10,9,8,7,6,3,2,1,5,4,11]
+            <br>
+            // 2- Declare uma função que receba um array como argumento,
+            <br>
+            // remova os dois primeiros valores do array e retorne a soma de todo o restante utilizando o método reduce.
+            <br>
+            // 3- Mostre no console a mensagem "O valor final é (valor)!" ao
+            <br>
+            // invocar a função acima.
+            <br>
+            console.log('Original arr10 ', arr10)
+            <br>
+            function arrayArgumento(array){
+                    <br>
+                const restante= array.slice(2)  
+                <br>  
+                console.log(' Array método splice', arr10)
+                <br>
+                const soma = restante.reduce((acumulador, valorAtual) => acumulador + valorAtual, 0);
+                <br>
+                return soma;
+                <br>
+                }
+                <br>
+                const resultado = arrayArgumento(arr10)
+                <br>
+                console.log('O valor final é: ', resultado)
+                <br>
+            // 4- Declare uma função que receba um array como argumento,
+            <br>
+            // remova o 4º valor do array e adicione 10, 20 e 28.
+            <br> <br>
+            console.log('Novos Exercícios')
+            <br>
+            const arr5 = [5,9,1,7]
+            <br>
+            console.log(`Original = ${arr5}`)
+            <br>
+            function arrayRestante(array1, somador){
+                <br>
+                const retirado = array1.splice(3,1)
+                <br>
+                console.log(`Retirado 4º valor = ${retirado}`)
+                <br>
+                array1.push(10,20,28)
+                <br>
+                somador = array1.reduce((a,b)=> a+b,0)
+                <br>
+                return [array1, somador]
+                <br>
+            }
+            <br>
+            const revelarResultado =arrayRestante(arr5)  
+            <br>
+            const qtdvalores = (revelarResultado[0].length) 
+            <br>
+            // 5- Mostre no console a frase: " O array tem (quantidade de itens)
+            <br>
+            // itens e são eles: (array)" .
+            <br>
+            console.log(`O array tem ${qtdvalores} itens e são eles:, ${revelarResultado[0]}, total de: ${revelarResultado[1]}`)
+            <br>
+            // 6- Crie a variável testSlice e atribua os dois últimos números do
+            <br>
+            // array utilizando o método slice.
+            <br>
+            console.log(`Original = ${arr5}`)
+            <br>
+            const testSlice = arr5.slice(4)
+            <br>
+            const somarSlice = testSlice.reduce((a,b)=>a+b,0)
+            <br>
+            console.log(`Slice ${testSlice} e sua soma = ${somarSlice} `)
+            <br>
+        </p>
+        <img class="image" src="./arrayExerc2.png" alt="print do DOM">
+    </section>
+    <footer class="rodape">
+        <p>
+            &copy; Desenvolvido &rarr; RafaelDaSilva1984  &reg            
+        </p>
+        <a class="link_redes" href="https://github.com/RafaelDaSilva1984">Github</a>
+    </footer> 
+</body>
+</html>
