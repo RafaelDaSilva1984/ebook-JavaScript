@@ -582,76 +582,175 @@
 // 8- Declare uma variável calc e instancie a classe calcFun.
 // 9- Mostre no console o resultado de todas as operações da
 // classe instanciada.
-class calcFun{
-    constructor(){
-        this.history = [] //armazena valor no array history
-        console.log(this)
-    }
-        soma(vl1,vl2){
-        const result= (vl1+vl2)
-        this.history.push(result)
-        return result
-    }
-    sub(vl1,vl2){
-        const result= (vl1-vl2)
-        this.history.push(result)
-        return result
-    }
-    mult(vl1,vl2){
-        const result= (vl1*vl2)
-        this.history.push(result)
-        return result
-    }
-    div(vl1,vl2){
-        const result= (vl1/vl2)
-        this.history.push(result)
-        return result
+// class calcFun{
+//     constructor(){
+//         this.history = [] //armazena valor no array history
+//         console.log(this)
+//     }
+//         soma(vl1,vl2){
+//         const result= (vl1+vl2)
+//         this.history.push(result)
+//         return result
+//     }
+//     sub(vl1,vl2){
+//         const result= (vl1-vl2)
+//         this.history.push(result)
+//         return result
+//     }
+//     mult(vl1,vl2){
+//         const result= (vl1*vl2)
+//         this.history.push(result)
+//         return result
+//     }
+//     div(vl1,vl2){
+//         const result= (vl1/vl2)
+//         this.history.push(result)
+//         return result
+//     }
+// }
+//     const calc = new calcFun() // precisa da palavra reservada new
+//     console.log(calc.soma(2,3),'soma')
+//     console.log(calc.sub(2,3),'sub')
+//     console.log(calc.mult(2,3),'mult')
+//     console.log(calc.div(2,3),'div')
+// // 10- Instancie uma classe com nome calcSmart que receba por
+// // herança as propriedades da classe calcFun.
+// // 11- Declare uma variável calcS e instancie a classe calcSmart
+// // 12- Mostre no console o resultado de todas as operações da classe
+// // instanciada.
+
+// class CalcSmart extends calcFun{
+//     constructor(){
+//         super()
+//     }
+//     soma(vl1,vl2){
+//     const result = (vl1+vl2)
+//     this.history.push(result) 
+//     return result
+//     }
+//         soma(vl1,vl2){
+//         const result = (vl1+vl2)
+//         this.history.push(result) //armazena valor no array history
+//         return result
+//         }
+//         sub(vl1,vl2){
+//         const result = (vl1-vl2)
+//         this.history.push(result)
+//         return result
+//         }
+//         mult(vl1,vl2){
+//         const result = (vl1*vl2)
+//         this.history.push(result)
+//         return result
+//         }
+//         div(vl1,vl2){
+//         const result = (vl1/vl2)
+//         this.history.push(result) 
+//         return result
+//         }
+//     }
+
+// const calcS = new CalcSmart() // precisa da palavra reservada new
+// console.log(calcS.soma(2,3),'soma')
+// console.log(calcS.sub(2,3),'sub')
+// console.log(calcS.mult(2,3),'mult')
+// console.log(calcS.div(2,3),'div')
+
+//setTimeout
+// callback function que tem delay para sua realização, definida em milisegundos
+// console.log('Inicio')
+// let timeOut = setTimeout(() =>console.log('TimeOut Depois de 2 segundos'),2000)
+// let interval = setInterval(function(){
+//     console.log('Interval De 2 em 2 segundos');
+// })
+// clearTimeout(timeOut) // bloquear o setTimeOut
+// clearInterval(interval) // bloquear o setInterval
+
+// console.log('Fim')
+
+// // 1- Declare uma variável grabFruit e atribua uma arrow function.
+// // 2- A função deve mostrar "Star! "no console.
+// // 3- Declare a variável fruit e atribua o valor 0.
+// // 4- Utilizando o setInterval, mostre no console a frase " Grab
+// // (valor) fruits" e adicione 1 a variável fruit a cada segundo.
+// // 5- Utilizando o setTimeout, pare a contagem 20 segundos depois
+// // de iniciar.
+// // 6- Mostre no console "Game over!" quando finalizar a
+// // contagem.
+// // 7- Invoque a função.
+
+// let grabFruit =(()=> console.log('Star'))
+// grabFruit()
+// let fruit = 0
+// let intervalo =setInterval(()=>console.log(`Grab ${++fruit} fruits`))
+// setTimeout(()=>clearInterval(intervalo),20)
+// let timeOut2 = setTimeout(() =>console.log('Game Over'),1000)
+
+// Promisse = Pendência, promessa de resolução
+// console.log('Início')
+// const promise = new Promise ((resolve, reject)=>{
+//     console.log('Entrou na promise')
+//     setTimeout(()=>resolve('Funcionou'),2000)
+//     setTimeout(()=>reject('Deu Erro'),2000)
+// })
+// // tratamento da promise
+// promise
+// .then(str => console.log('Ok Promise:', str))
+// .catch(error => console.log('Hum !!!!', error))
+// console.log('Fim')
+
+// Declare uma função que recebe a idade de um usuário e
+// retorna uma Promise que depois de 2 segundos retornará se
+// usuário é maior ou não que 18 anos. Se o usuário ter mais que
+// 18 anos de idade o resultado deve cair no .then , caso
+// contrário, no .catch
+
+// function idade(idade){
+//     const promise = new Promise((resolve, reject)=>{
+//         idade >= 18 ? setTimeout(()=>resolve('Maior Idade'),2000) : setTimeout(()=>reject('Menor Idade'),2000)
+        
+//     })
+    
+//     promise
+//     .then(str => console.log(idade,'Anos, ',str))
+//     .catch(error => console.log(idade, 'Anos, ',error))
+// }
+// idade(11)
+
+//Async / Await
+
+// const promise = () => new Promise ((resolve, reject)=>{
+//     console.log('Entrou na promise async ')
+//     setTimeout(()=>resolve('Funcionou async'),2000)
+//     setTimeout(()=>reject('Deu Erro async'),2000)
+// })
+// async function main(){
+//     console.log('Início async')
+// try{
+//     const result = await promise()
+//     console.log('Ok await; ',result)
+// }catch(error){
+//     console.log('Hum !!!!', error)
+// }
+// console.log('Fim')
+// }
+// main()
+
+//Fetch Api
+//sincrona
+async function main(){
+    try{
+        const response = await fetch("https://jsonplaceholder.typicode.com/todos/1")
+        const data = await response.json()
+        console.log(data)
+    }catch(error){
+        console.log('Error', error)
     }
 }
-    const calc = new calcFun() // precisa da palavra reservada new
-    console.log(calc.soma(2,3),'soma')
-    console.log(calc.sub(2,3),'sub')
-    console.log(calc.mult(2,3),'mult')
-    console.log(calc.div(2,3),'div')
-// 10- Instancie uma classe com nome calcSmart que receba por
-// herança as propriedades da classe calcFun.
-// 11- Declare uma variável calcS e instancie a classe calcSmart
-// 12- Mostre no console o resultado de todas as operações da classe
-// instanciada.
+main()
 
-class CalcSmart extends calcFun{
-    constructor(){
-        super()
-    }
-    soma(vl1,vl2){
-    const result = (vl1+vl2)
-    this.history.push(result) 
-    return result
-    }
-        soma(vl1,vl2){
-        const result = (vl1+vl2)
-        this.history.push(result) //armazena valor no array history
-        return result
-        }
-        sub(vl1,vl2){
-        const result = (vl1-vl2)
-        this.history.push(result)
-        return result
-        }
-        mult(vl1,vl2){
-        const result = (vl1*vl2)
-        this.history.push(result)
-        return result
-        }
-        div(vl1,vl2){
-        const result = (vl1/vl2)
-        this.history.push(result) 
-        return result
-        }
-    }
-
-const calcS = new CalcSmart() // precisa da palavra reservada new
-console.log(calcS.soma(2,3),'soma')
-console.log(calcS.sub(2,3),'sub')
-console.log(calcS.mult(2,3),'mult')
-console.log(calcS.div(2,3),'div')
+//assincrona
+fetch("https://jsonplaceholder.typicode.com/todos/1")
+    .then(response =>response.json())
+    .then(data => console.log(data))
+    .catch(error => console.log('Error', error))
