@@ -770,7 +770,7 @@ console.log(buttonCalcular)
 // criando Elementos
 let appElement = document.querySelector('#app') //captura elemento div #app
 let pElement = document.createElement('p') //cria um element p
-pElement.innerHTML='Não tem nenhum Cálculo'
+// pElement.innerHTML='Não tem nenhum Cálculo'
 pElement.style.fontSize = '18px'
 pElement.style.textTransform = 'uppercase'
 appElement.appendChild(pElement) //adiciona o element p criado na div #app
