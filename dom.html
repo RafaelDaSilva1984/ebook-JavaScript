@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js"defer ></script>
+    <title>DOM</title>
+</head>
+<body>
+    <header class="nav">
+        <h1 class="cabecalho_titulo">JavaScript</h1>
+        <a class="nav_link" href="./index.html">Console Log</a>
+        <a class="nav_link" href="./aula02.html">Variáveis</a>
+        <a class="nav_link" href="./aula03.html">Aritméticos</a>
+        <a class="nav_link" href="./aula04.html">Relacionais</a>
+        <a class="nav_link" href="./aula05.html">Lógicos</a>
+        <a class="nav_link" href="./aula06.html">Condicionais</a>
+        <a class="nav_link" href="./aula07.html">For e While</a>
+        <a class="nav_link" href="./aula08.html">Functions</a>
+        <a class="nav_link" href="./aula09.html">Objetos</a>
+        <a class="nav_link" href="./aula10.html">Strings</a>
+        <a class="nav_link" href="./aula11.html">Arrays</a>
+        <a class="nav_link" href="./aula12.html">Arrow Functions</a>
+        <a class="nav_link" href="./aula13.html">Classes</a>
+        <a class="nav_link" href="./aula14.html">Temporizadores & Promise & async/await & Fetch Api</a>
+        <a class="nav_link" href="./dom.html">Dom</a>
+    </header>
+    <p class="texto">
+        <br>
+        Usando Dom 
+        <br>
+        Capturando os elementos
+        <br>
+        console.log('Capturando os elementos')
+        <br>
+        let inputN1 = document.querySelector('input#n1')
+        <br>
+        console.log(inputN1);
+        <br>
+        let inputN2 = document.querySelector('input#n2')
+        <br>
+        console.log(inputN2);
+        <br>
+        let buttonCalcular = document.querySelector('button')
+        <br>
+        console.log(buttonCalcular)
+        <br><br>        
+        Criando Elementos
+        <br>
+        let appElement = document.querySelector('#app') //captura elemento div #app
+        <br>
+        let pElement = document.createElement('p') //cria um element p
+        <br>
+        //pElement.innerHTML='Não tem nenhum Cálculo'
+        <br>
+        pElement.style.fontSize = '18px'
+        <br>
+        pElement.style.textTransform = 'uppercase'
+        <br>
+        appElement.appendChild(pElement) //adiciona o element p criado na div #app
+        <br>        
+        function funcaoCalcular(){
+            <br>
+            const n1 = Number(inputN1.value)
+            <br>
+            const n2 = Number(inputN2.value)
+            <br>
+            const soma = n1 + n2
+            <br>
+            pElement.innerHTML = `${n1} + ${n2} = ${soma}`
+            <br>
+            return soma
+            <br>
+        }
+        <br>
+         function mostrarResultado() {
+            <br>
+             let soma = funcaoCalcular(n1,n2)
+             <br>
+             console.log(`A soma é = ${soma}`)
+             <br>
+         }
+         <br><br>        
+        Persistência de Dados browser
+        <br>
+        Armazenar os dados de login até o logout
+        <br>
+        Local Storage
+        <br>
+        Armazena chave e valor
+        <br>
+        const valor = 1984
+        <br>
+        localStorage.setItem('chave',valor)
+        <br>
+        const user = 'Rafael' // variavel
+        <br>
+        localStorage.setItem('user', user) // chave = user e valor a variavel
+        <br>
+        console.log(localStorage.getItem('user'))
+        <br>
+        console.log(localStorage.getItem('chave'))
+        <br>
+        localStorage.clear()
+        <br> <br>
+        Persistência com JSON
+        <br>
+        const usuario ={
+            <br>
+            name:'Rafael Silva',
+            <br>
+            company:'life'//
+            <br>
+        }
+        <br>
+        localStorage.setItem('usuario', JSON.stringify(usuario))
+        <br>
+        //console.log(localStorage.getItem('usuario')) // mostra a conversão de json para string
+        <br>
+        // reverter para json
+        <br>
+        let recuperado = localStorage.getItem('usuario') // variavel com valores do usuario como string
+        <br>
+        console.log(typeof(recuperado),(recuperado),'---formato string') // mostra o tipo da variavel recuperado
+        <br>
+        console.log(JSON.parse(recuperado),'---formato json') // converte para JSON
+        <br><br>
+        Persistência com vetor
+        <br>
+        const valores =['str', 21, true, {}, ()=>{}]
+        <br>
+        localStorage.setItem('valores', JSON.stringify(valores))
+        <br>
+        let valoresRecuperados = localStorage.getItem('valores')
+        <br>
+        console.log(typeof(valoresRecuperados),(valoresRecuperados),'---formato de string')
+        <br>
+        console.log(JSON.parse(valoresRecuperados), '---formato json')
+        <br><br>
+    </p>
+    <div class="texto_rodape" id="app">
+        <input type="number" name="n1" id="n1" > +
+        <input type="number" name="n2" id="n2">
+        <button onclick="mostrarResultado()" class="div_input_button_calcular">Calcular</button>
+    </div>
+    <img class="image" src="./assets/dom.png" alt="print do DOM">
+    <footer>
+        <div class="texto_rodape">
+            <p class="texto_rodape">
+                &copy; Desenvolvido &rarr; RafaelDaSilva1984  &reg                        
+            </p>
+        </div>
+        <div class="social-icons">
+            <a class="link_redes_rodape" href="https://github.com/RafaelDaSilva1984" target="_blank" rel="noopener noreferrer">Github</a>
+            <a class="link_redes_rodape" href="https://www.linkedin.com/in/rafael-da-silva-rfs-desenvolvedor/" target="_blank" rel="noopener noreferrer">Linkedin</a>
+        </div>
+      </footer> 
+</body>
+</html>
