@@ -737,20 +737,87 @@
 // main()
 
 //Fetch Api
-//sincrona
-async function main(){
-    try{
-        const response = await fetch("https://jsonplaceholder.typicode.com/todos/1")
-        const data = await response.json()
-        console.log(data)
-    }catch(error){
-        console.log('Error', error)
-    }
-}
-main()
+// //sincrona
+// async function main(){
+//     try{
+//         const response = await fetch("https://jsonplaceholder.typicode.com/todos/1")
+//         const data = await response.json()
+//         console.log(data)
+//     }catch(error){
+//         console.log('Error', error)
+//     }
+// }
+// main()
 
-//assincrona
-fetch("https://jsonplaceholder.typicode.com/todos/1")
-    .then(response =>response.json())
-    .then(data => console.log(data))
-    .catch(error => console.log('Error', error))
+// //assincrona
+// fetch("https://jsonplaceholder.typicode.com/todos/1")
+//     .then(response =>response.json())
+//     .then(data => console.log(data))
+//     .catch(error => console.log('Error', error))
+
+
+
+// Usando Dom 
+// Capturando os elementos
+console.log('Capturando os elementos')
+let inputN1 = document.querySelector('input#n1')
+console.log(inputN1);
+let inputN2 = document.querySelector('input#n2')
+console.log(inputN2);
+let buttonCalcular = document.querySelector('button')
+console.log(buttonCalcular)
+
+// criando Elementos
+let appElement = document.querySelector('#app') //captura elemento div #app
+let pElement = document.createElement('p') //cria um element p
+pElement.innerHTML='Não tem nenhum Cálculo'
+pElement.style.fontSize = '18px'
+pElement.style.textTransform = 'uppercase'
+appElement.appendChild(pElement) //adiciona o element p criado na div #app
+
+function funcaoCalcular(){
+    const n1 = Number(inputN1.value)
+    const n2 = Number(inputN2.value)
+    const soma = n1 + n2
+    pElement.innerHTML = `${n1} + ${n2} = ${soma}`
+    return soma
+}
+ function mostrarResultado() {
+     let soma = funcaoCalcular(n1,n2)
+     console.log(`A soma é = ${soma}`)
+ }
+
+// Persistência de Dados browser
+// armazenar os dados de login até o logout
+
+//Local Storage
+//armazena chave e valor
+const valor = 1984
+localStorage.setItem('chave',valor)
+const user = 'Rafael' // variavel
+localStorage.setItem('user', user) // chave = user e valor a variavel
+console.log(localStorage.getItem('user'))
+console.log(localStorage.getItem('chave'))
+localStorage.clear()
+
+// Persistência com JSON
+const usuario ={
+    name:'Rafael Silva',
+    company:'life'//
+}
+localStorage.setItem('usuario', JSON.stringify(usuario))
+//console.log(localStorage.getItem('usuario')) // mostra a conversão de json para string
+// reverter para json
+let recuperado = localStorage.getItem('usuario') // variavel com valores do usuario como string
+console.log(typeof(recuperado),(recuperado),'---formato string') // mostra o tipo da variavel recuperado
+console.log(JSON.parse(recuperado),'---formato json') // converte para JSON
+
+// persistência com vetor
+
+const valores =['str', 21, true, {}, ()=>{}]
+localStorage.setItem('valores', JSON.stringify(valores))
+let valoresRecuperados = localStorage.getItem('valores')
+console.log(typeof(valoresRecuperados),(valoresRecuperados),'---formato de string')
+console.log(JSON.parse(valoresRecuperados), '---formato json')
+
+
